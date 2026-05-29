@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alé Treinos | Método H.I.T.S</title>
+<title>Alé Treinos</title>
+<meta property="og:title" content="Alé Treinos — Método H.I.T.S">
+<meta property="og:description" content="Treine em casa com o Método H.I.T.S da Alessandra. 15 a 25 minutos por dia, sem equipamentos.">
+<meta property="og:image" content="alessandra.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="alessandra.png">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -547,7 +553,12 @@ src="https://www.facebook.com/tr?id=3272172719753428&ev=PageView&noscript=1"
     audio.play().then(function(){ setPlaying(true); }).catch(function(){});
   };
 
-  audio.addEventListener('ended', function(){ setPlaying(false); });
+  audio.addEventListener('ended', function(){
+    setPlaying(false);
+    setTimeout(function(){
+      notif.classList.add('hide');
+    }, 800);
+  });
 
   // Autoplay: tenta imediatamente e no primeiro gesto
   function tryPlay() {
